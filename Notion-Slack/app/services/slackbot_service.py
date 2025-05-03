@@ -94,19 +94,3 @@ class SlackBotService:
             ]
         }
 
-# ----------------------------
-# Scheduler appended below
-# ----------------------------
-
-def job():
-    bot_service = SlackBotService()
-    result = bot_service.process_and_upsert()
-    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {result['message']} ({result['message_count']} messages)")
-
-if __name__ == "__main__":
-    schedule.every(30).minutes.do(job)
-    print("SlackBotService scheduler started. Running every 30 minutes.")
-    job()  # Optional: run immediately once
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
