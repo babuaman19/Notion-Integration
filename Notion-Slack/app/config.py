@@ -1,0 +1,1 @@
+# For basic fastapi app related configuration settings 

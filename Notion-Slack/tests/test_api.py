@@ -1,0 +1,1 @@
+# For writing unit test cases for fastapi
